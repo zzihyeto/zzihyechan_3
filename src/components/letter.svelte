@@ -29,7 +29,7 @@
 				<span class="son">의 아들</span>임찬교
 			</p>
 			<p>
-				이찬욱<span class="name-divider">{@html nameDivider}</span> 김정임<span class="daughter"
+				이찬욱<span class="name-divider">{@html nameDivider}</span> 이경희<span class="daughter"
 					>의 딸</span
 				>이지혜
 			</p>

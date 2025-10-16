@@ -1,14 +1,19 @@
 <script lang="ts">
-	import photo2 from '$lib/assets/gallery/7.webp';
-	import photo3 from '$lib/assets/gallery/black_full_2.jpg';
-	import photo4 from '$lib/assets/gallery/black_half_1.jpg';
-	import photo5 from '$lib/assets/gallery/10.webp';
-	import photo6 from '$lib/assets/gallery/white_half_1.jpg';
-	import photo7 from '$lib/assets/gallery/black_full_1.jpg';
-	import photo8 from '$lib/assets/gallery/8.webp';
-	import photo9 from '$lib/assets/gallery/9.webp';
-	import photo10 from '$lib/assets/gallery/white_full_1.jpg';
-	import photo11 from '$lib/assets/gallery/11.webp';
+    import imgBlackFull1 from '$lib/assets/gallery/black_full_1.jpg';
+    import imgGreen1 from '$lib/assets/gallery/green_1.jpg';
+    import imgBlackHalf1 from '$lib/assets/gallery/black_half_1.jpg';
+    import imgChangyoFull1 from '$lib/assets/gallery/changyo_full_1.jpg';
+    import imgFlowerOp1 from '$lib/assets/gallery/flower_op_1.jpeg';
+    import imgFlowerWalking1 from '$lib/assets/gallery/flower_walking_1.jpg';
+    import imgFlowerWalking2 from '$lib/assets/gallery/flower_walking_2.jpg';
+    import imgBlackFull2 from '$lib/assets/gallery/black_full_2.jpg';
+    import imgGreen2 from '$lib/assets/gallery/green_2.jpg';
+    import imgGreen3 from '$lib/assets/gallery/green_3.jpg';
+    import imgGreen6 from '$lib/assets/gallery/green_6.jpg';
+    import imgJihyeChanDance from '$lib/assets/gallery/jihye_chan_dance.jpg';
+    import imgJihyeFull1 from '$lib/assets/gallery/jihye_full_1.png';
+    import imgWhiteFull1 from '$lib/assets/gallery/white_full_1.jpg';
+    import imgWhiteHalf1 from '$lib/assets/gallery/white_half_1.jpg';
 
 	import PhotoSwipeLightBox from 'photoswipe/lightbox';
 	import PhotoSwipe from 'photoswipe';
@@ -24,6 +29,8 @@
 			showHideAnimationType: 'fade',
 			pswpModule: PhotoSwipe,
 			allowPanToNext: true,
+			zoom: false,
+			wheelToZoom: false,
 			allowMouseDrag: true,
 			allowTouchDrag: true,
 			showHideOpacity: true,
@@ -34,58 +41,23 @@
 		lightbox.init();
 	});
 
-	const photos = [
-		{
-			src: photo10,
-			width: 2538,
-			height: 3554
-		},
-		{
-			src: photo2,
-			width: 1200,
-			height: 1800
-		},
-		{
-			src: photo3,
-			width: 3244,
-			height: 4541
-		},
-		{
-			src: photo4,
-			width: 3503,
-			height: 4905
-		},
-		{
-			src: photo5,
-			width: 1200,
-			height: 1800
-		},
-		{
-			src: photo6,
-			width: 3123,
-			height: 4372
-		},
-		{
-			src: photo7,
-			width: 3244,
-			height: 4541
-		},
-		{
-			src: photo8,
-			width: 1200,
-			height: 1800
-		},
-		{
-			src: photo9,
-			width: 1200,
-			height: 1790
-		},
-		{
-			src: photo11,
-			width: 1200,
-			height: 1790
-		}
-	];
+    const photos = [
+        // 지정해주신 순서 (전체/반만 보기 규칙은 CSS grid-row span으로 반영)
+        { src: imgBlackFull1,     width: 3244, height: 4541 },
+        { src: imgBlackFull2,     width: 3244, height: 4541 },
+        { src: imgChangyoFull1,   width: 3244, height: 4541 },
+        { src: imgBlackHalf1,     width: 3503, height: 4905 },
+        { src: imgWhiteHalf1,     width: 3123, height: 4372 },
+        { src: imgWhiteFull1,     width: 2538, height: 3554 },
+        { src: imgJihyeFull1,     width: 3123, height: 4372 },
+        { src: imgGreen1,         width: 4032, height: 3024 },
+		{ src: imgGreen6,         width: 3024, height: 4032 },
+        { src: imgGreen2,         width: 3024, height: 4032 },
+		{ src: imgGreen3,         width: 3024, height: 4032 },
+        { src: imgFlowerOp1,      width: 3464, height: 3464 },
+        { src: imgFlowerWalking1, width: 2268, height: 4032 },
+        { src: imgFlowerWalking2, width: 2268, height: 4032 },
+    ];
 </script>
 
 <section class="gallery backgroundpng">
@@ -169,13 +141,19 @@
 	}
 
 	.slide:nth-child(1),
-	.slide:nth-child(2),
-	.slide:nth-child(3),
-	.slide:nth-child(5),
+	.slide:nth-child(4),
+	.slide:nth-child(6),
 	.slide:nth-child(7),
-	.slide:nth-child(8),
-	.slide:nth-child(9),
-	.slide:nth-child(10) {
+	.slide:nth-child(11),
+	.slide:nth-child(13){
 		grid-row: span 2;
+	}
+
+	/* 2,3번(반크기) 이미지는 위쪽을 더 보이게 크롭 위치 조정 */
+	#gallery a:nth-child(2) img.thumbnail,
+	#gallery a:nth-child(3) img.thumbnail,
+	#gallery a:nth-child(5) img.thumbnail,
+	#gallery a:nth-child(14) img.thumbnail  {
+		object-position: center 20%;
 	}
 </style>

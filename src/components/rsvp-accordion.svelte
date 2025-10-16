@@ -76,27 +76,48 @@
 	<div class="account-container">
 		{@html $_('rsvp.accordion.footer_letter1').replace(/\r?\n/g, '<br>')}
 		<br>
-		
-		<!-- 기업은행 계좌 -->
-		<p>{$_('rsvp.accordion.account_number')}</p>
-		<p>{$_('rsvp.accordion.account_name')}</p>
-		<button class="copy-btn" onclick={() => copyAccount($_('rsvp.accordion.account_number').split(' ').slice(1).join(' '))}>
-			{$_('rsvp.accordion.copy_account')}
-		</button>
-		<br>
+			<!-- 임찬교 위에 부모님 계좌 (account_number4/account_name4) -->
+			<p>{$_('rsvp.accordion.account_number4')}</p>
+			<p>{$_('rsvp.accordion.account_name4')}
+				<button class="copy-btn" onclick={() => copyAccount($_('rsvp.accordion.account_number4').split(' ').slice(1).join(' '))}>
+					{$_('rsvp.accordion.copy_account')}
+				</button>
+			</p>
+			
+			<br>
 
-		<!-- 카카오뱅크 계좌 -->
-		<p>{$_('rsvp.accordion.account_number2')}</p>
-		<p>{$_('rsvp.accordion.account_name2')}</p>
-		<button class="copy-btn" onclick={() => copyAccount($_('rsvp.accordion.account_number2').split(' ').slice(1).join(' '))}>
-			{$_('rsvp.accordion.copy_account')}
-		</button>
-		<br>
+			<!-- 임찬교 계좌 -->
+			<p>{$_('rsvp.accordion.account_number2')}</p>
+			<p>{$_('rsvp.accordion.account_name2')}
+				<button class="copy-btn" onclick={() => copyAccount($_('rsvp.accordion.account_number2').split(' ').slice(1).join(' '))}>
+					{$_('rsvp.accordion.copy_account')}
+				</button>
+			</p>
+
+			<br>
+
+			<!-- 이지혜 위에 부모님 계좌 (account_number3/account_name3) -->
+			<p>{$_('rsvp.accordion.account_number3')}</p>
+			<p>{$_('rsvp.accordion.account_name3')}
+				<button class="copy-btn" onclick={() => copyAccount($_('rsvp.accordion.account_number3').split(' ').slice(1).join(' '))}>
+					{$_('rsvp.accordion.copy_account')}
+				</button>
+			</p>
+			<br>
+
+			<!-- 이지혜 계좌 -->
+			<p>{$_('rsvp.accordion.account_number')}</p>
+			<p>{$_('rsvp.accordion.account_name')}
+				<button class="copy-btn" onclick={() => copyAccount($_('rsvp.accordion.account_number').split(' ').slice(1).join(' '))}>
+					{$_('rsvp.accordion.copy_account')}
+				</button>
+			</p>
+
+			<br>
 
 		{@html $_('rsvp.accordion.footer_letter2').replace(/\r?\n/g, '<br>')}
 		<br>
 		
-
 		{#if copied}
 			<p class="copied-message">{$_('rsvp.accordion.account_copied')}</p>
 		{/if}
