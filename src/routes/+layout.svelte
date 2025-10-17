@@ -4,7 +4,7 @@
 	import { localeStore } from '../i18n.svelte';
 	import { onMount } from 'svelte';
 	import { _ } from 'svelte-i18n';
-
+	import Kakao from "https://t1.kakaocdn.net/kakao_js_sdk/2.7.2/kakao.min.js" ;
 	let { children } = $props();
 
 	let localeLoaded = $derived(!localeStore.isLoading && localeStore.locale);
@@ -17,7 +17,6 @@
 		}
 
 		// Kakao SDK 초기화
-		import Kakao from "https://t1.kakaocdn.net/kakao_js_sdk/2.7.2/kakao.min.js" ;
 		const key = import.meta.env.VITE_KAKAO_JS_KEY;
 		if (window.Kakao && !window.Kakao.isInitialized()) {
 			window.Kakao.init(key);
