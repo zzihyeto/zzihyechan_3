@@ -17,7 +17,7 @@
 		}
 
 		// Kakao SDK 초기화
-		import Kakao from = "https://t1.kakaocdn.net/kakao_js_sdk/2.7.2/kakao.min.js" ;
+		import Kakao from "https://t1.kakaocdn.net/kakao_js_sdk/2.7.2/kakao.min.js" ;
 		const key = import.meta.env.VITE_KAKAO_JS_KEY;
 		if (window.Kakao && !window.Kakao.isInitialized()) {
 			window.Kakao.init(key);
