@@ -73,56 +73,63 @@
 {/snippet}
 
 {#snippet accountContent()}
-	<div class="account-container">
-		{@html $_('rsvp.accordion.footer_letter1').replace(/\r?\n/g, '<br>')}
-		<br>
-			<!-- 임찬교 위에 부모님 계좌 (account_number4/account_name4) -->
+	{@html $_('rsvp.accordion.footer_letter1').replace(/\r?\n/g, '<br>')}
+	<br>
+	{@html $_('rsvp.accordion.footer_letter2').replace(/\r?\n/g, '<br>')}
+	<br>
+	<div class="account-group account-container">
+		<!-- 신랑 가족 -->
+		<p class="group-title">신랑측</p>
+
+		<div class="account-item">
 			<p>{$_('rsvp.accordion.account_number4')}</p>
 			<p>{$_('rsvp.accordion.account_name4')}
-				<button class="copy-btn" onclick={() => copyAccount($_('rsvp.accordion.account_number4').split(' ').slice(1).join(' '))}>
+				<button class="copy-btn" on:click={() => copyAccount($_('rsvp.accordion.account_number4').split(' ').slice(1).join(' '))}>
 					{$_('rsvp.accordion.copy_account')}
 				</button>
 			</p>
-			
-			<br>
+		</div>
 
-			<!-- 임찬교 계좌 -->
+		<div class="account-item">
 			<p>{$_('rsvp.accordion.account_number2')}</p>
 			<p>{$_('rsvp.accordion.account_name2')}
-				<button class="copy-btn" onclick={() => copyAccount($_('rsvp.accordion.account_number2').split(' ').slice(1).join(' '))}>
+				<button class="copy-btn" on:click={() => copyAccount($_('rsvp.accordion.account_number2').split(' ').slice(1).join(' '))}>
 					{$_('rsvp.accordion.copy_account')}
 				</button>
 			</p>
+		</div>
+	</div>
 
-			<br>
+	<br>
+	<!-- 신부 가족 -->
+	<div class="account-group account-container">
+		<p class="group-title">신부측</p>
 
-			<!-- 이지혜 위에 부모님 계좌 (account_number3/account_name3) -->
+		<div class="account-item">
 			<p>{$_('rsvp.accordion.account_number3')}</p>
 			<p>{$_('rsvp.accordion.account_name3')}
-				<button class="copy-btn" onclick={() => copyAccount($_('rsvp.accordion.account_number3').split(' ').slice(1).join(' '))}>
+				<button class="copy-btn" on:click={() => copyAccount($_('rsvp.accordion.account_number3').split(' ').slice(1).join(' '))}>
 					{$_('rsvp.accordion.copy_account')}
 				</button>
 			</p>
-			<br>
+		</div>
 
-			<!-- 이지혜 계좌 -->
+		<div class="account-item">
 			<p>{$_('rsvp.accordion.account_number')}</p>
 			<p>{$_('rsvp.accordion.account_name')}
-				<button class="copy-btn" onclick={() => copyAccount($_('rsvp.accordion.account_number').split(' ').slice(1).join(' '))}>
+				<button class="copy-btn" on:click={() => copyAccount($_('rsvp.accordion.account_number').split(' ').slice(1).join(' '))}>
 					{$_('rsvp.accordion.copy_account')}
 				</button>
 			</p>
-
-			<br>
-
-		{@html $_('rsvp.accordion.footer_letter2').replace(/\r?\n/g, '<br>')}
-		<br>
-		
-		{#if copied}
-			<p class="copied-message">{$_('rsvp.accordion.account_copied')}</p>
-		{/if}
+		</div>
 	</div>
+	<br>
+	
+	{#if copied}
+		<p class="copied-message">{$_('rsvp.accordion.account_copied')}</p>
+	{/if}
 {/snippet}
+
 
 <div class="accordion-root" {...accordion.root}>
 	{@render accordionItem(parkingItem, parkingContent)}
@@ -197,7 +204,7 @@
 		color: $white;
 		border: none;
 		border-radius: 4px;
-		padding: 0.5em 0.8em;
+		padding: 0.3em 0.5em;
 		font-size: 0.8rem;
 		cursor: pointer;
 		transition: background-color 0.2s ease;
@@ -213,4 +220,33 @@
 		margin-top: 0.5em;
 		text-align: center;
 	}
+	.account-wrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 2em;
+}
+
+	.account-group {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		background-color: rgba(0, 0, 0, 0.02);
+		padding: 1em;
+		border-radius: 8px;
+		width: 90%;
+		max-width: 400px;
+	}
+
+	.group-title {
+		font-weight: 600;
+		margin-bottom: 0.8em;
+		font-size: 1rem;
+	}
+
+	.account-item {
+		margin-bottom: 0.8em;
+		text-align: center;
+	}
+
 </style>
