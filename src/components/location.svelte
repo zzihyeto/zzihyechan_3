@@ -25,8 +25,8 @@
 	function shareKakaoTalk() {
 		const url   = window.location.href;
 		const title = '임찬교와 이지혜의 결혼식에 초대합니다!';
-		const desc  = '2026년 1월 31일, 우리의 특별한 날에 함께해주세요.';
-		const image = 'https://emily-marries-anthony.com/preview.jpg'; // 가급적 1200x630 권장
+		const desc  = '26.01.31 (토) 오후 12시 함께 해주세요!';
+		const image = 'https://zzihyechanweddingday.netlify.app/black_half_1.jpg'; // 가급적 1200x630 권장
 
 		// 1) Kakao 공식 공유 (PC/모바일 공통)
 		if (window.Kakao && window.Kakao.isInitialized()) {

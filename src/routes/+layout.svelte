@@ -40,7 +40,7 @@
 	/>
 	<meta property="og:title" content="ChanGyo & JiHye's Wedding" /> 
 	<meta property="og:description" content="26.01.31 (토) 오후 12시 함께 해주세요!" /> 
-	<meta property="og:image" content="https://zzihyechanwedding.netlify.app/black_half_1.jpg" /> 
+	<meta property="og:image" content="https://zzihyechanweddingday.netlify.app/black_half_1.jpg" /> 
 	<meta property="og:url" content="https://zzihyechanweddingday.netlify.app/" /> <!--2번도장-->
 	<meta property="og:type" content="website" />
 
