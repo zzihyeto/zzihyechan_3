@@ -25,7 +25,7 @@
 	function shareKakaoTalk() {
 		const url   = window.location.href;
 		const title = "ChanGyo & JiHye's Wedding";
-		const desc  = '👰🏻‍♀️🤵🏻‍♂️226.01.31 (토) 오후 12시 함께 해주세요!';
+		const desc  = '👰🏻‍♀️🤵🏻‍♂️26. 01. 31(토) 오후 12시 초대합니다';
 		const image = 'https://zzihyechanweddingday.netlify.app/black_half_1.jpg'; // 가급적 1200x630 권장
 
 		// 1) Kakao 공식 공유 (PC/모바일 공통)
