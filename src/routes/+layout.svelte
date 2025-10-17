@@ -17,6 +17,7 @@
 		}
 
 		// Kakao SDK 초기화
+		import Kakao from = "https://t1.kakaocdn.net/kakao_js_sdk/2.7.2/kakao.min.js" ;
 		const key = import.meta.env.VITE_KAKAO_JS_KEY;
 		if (window.Kakao && !window.Kakao.isInitialized()) {
 			window.Kakao.init(key);
@@ -44,8 +45,8 @@
 	<meta property="og:url" content="https://zzihyechanweddingday.netlify.app/" /> <!--2번도장-->
 	<meta property="og:type" content="website" />
 
-	<!-- ✅ 여기에서 외부 SDK 스크립트 로드 -->
-	<script src="https://t1.kakaocdn.net/kakao_js_sdk/2.7.2/kakao.min.js" defer crossorigin="anonymous"></script>
+	<!-- ✅ 여기에서 외부 SDK 스크립트 로드 
+	<script src="https://t1.kakaocdn.net/kakao_js_sdk/2.7.2/kakao.min.js" defer crossorigin="anonymous"></script>-->
 </svelte:head>
 
 {#if localeLoaded}
