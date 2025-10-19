@@ -6,17 +6,31 @@
 	let isPlaying = $state(false);
 	let isMuted = $state(false);
 	let showControls = $state(false);
+	let playbackStarted = $state(false);
 
 	onMount(() => {
-		// 오디오 파일 경로를 여기에 설정하세요
-		// 예: audio.src = '/path/to/your/music.mp3';
-		// audio.src = '/static/music/background-music.mp3';
-		
-		// 자동 재생 시도 (브라우저 정책으로 인해 사용자 상호작용 후에만 작동)
-		// audio.play().catch(() => {
-		// 	console.log('자동 재생이 차단되었습니다. 사용자가 상호작용해야 합니다.');
-		// });
+		audio.src = '/mobilemusic.mp3';
+		document.body.addEventListener('scroll', handleFirstInteraction, { once: true });
+		document.body.addEventListener('touchstart', handleFirstInteraction, { once: true });
+        document.body.addEventListener('click', handleFirstInteraction, { once: true });
+	
 	});
+
+	function handleFirstInteraction() {
+        if (!playbackStarted) {
+            audio.play().then(() => {
+                isPlaying = true;
+                playbackStarted = true;
+               // ⭐️ 성공 시 리스너를 제거합니다. ⭐️
+			   document.body.removeEventListener('scroll', handleFirstInteraction);
+            	document.body.removeEventListener('touchstart', handleFirstInteraction);
+            	document.body.removeEventListener('click', handleFirstInteraction); }
+			).catch(e => {
+                console.log('자동 재생 실패 (브라우저 차단):', e);
+                playbackStarted = true; // 실패해도 다시 시도는 안 함
+            });
+        }
+    }
 
 	function togglePlay() {
 		if (isPlaying) {
