@@ -4,6 +4,7 @@
 	import { localeStore } from '../i18n.svelte';
 	import { Clipboard, Github } from '@lucide/svelte';
 	import { onMount } from 'svelte';
+	import kakaofriend from '$lib/assets/kakaofriend1.png';
 
 	function copyAddress() {
 		navigator.clipboard
