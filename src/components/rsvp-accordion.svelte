@@ -82,6 +82,14 @@
 		<p class="group-title">신랑측</p>
 
 		<div class="account-item">
+			<p>{$_('rsvp.accordion.account_number6')}</p>
+			<p>{$_('rsvp.accordion.account_name6')}
+				<button class="copy-btn" on:click={() => copyAccount($_('rsvp.accordion.account_number6').split(' ').slice(1).join(' '))}>
+					{$_('rsvp.accordion.copy_account')}
+				</button>
+			</p>
+		</div>
+		<div class="account-item">
 			<p>{$_('rsvp.accordion.account_number4')}</p>
 			<p>{$_('rsvp.accordion.account_name4')}
 				<button class="copy-btn" on:click={() => copyAccount($_('rsvp.accordion.account_number4').split(' ').slice(1).join(' '))}>
